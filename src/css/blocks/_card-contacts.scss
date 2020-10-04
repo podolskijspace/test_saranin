@@ -1,0 +1,201 @@
+.card-contacts {
+  $self: &;
+
+  position: relative;
+  height: 100%;
+  padding: 0 0 0 4.5rem;
+  background: $cardContacts;
+
+  @include mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  &--btn {
+    padding: 0 0 0 6.6rem;
+
+    @include mobile {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 4.8rem 0 4.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include mobile {
+      padding: 2rem 0 3rem;
+    }
+
+    #{$self}--btn & {
+      padding: 5.4rem 0 6rem 0;
+
+      @include mobile {
+        padding: 2rem 0 3rem;
+      }
+    }
+  }
+
+  &__list {
+    margin: -1.4rem 0;
+  }
+
+  &__item {
+    padding: 1.4rem 0;
+  }
+
+  &__title {
+    margin-bottom: 1.2rem;
+    font-size: 2.3rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    color: #717582;
+
+    @include mobile {
+      margin-bottom: 1rem;
+    }
+
+    #{$self}--btn & {
+      margin-bottom: 2.6rem;
+
+      @include mobile {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__info-list {
+    margin: -1.6rem 0;
+
+    #{$self}--btn & {
+      margin: -1rem 0;
+
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    position: relative;
+    padding: 1.6rem 0;
+
+    #{$self}--btn & {
+      padding: 1rem 0;
+    }
+  }
+
+  &__icon-wrap {
+    position: absolute;
+    left: 0;
+    top: 1.6rem;
+
+    #{$self}--btn & {
+      top: 1rem;
+    }
+  }
+
+  &__info-text {
+    padding-left: 3.3rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.7rem;
+    color: #9494a2;
+
+    br {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    padding-top: 2.1rem;
+    padding-bottom: 2.2rem;
+    margin-top: auto;
+    max-width: 20.8rem;
+    letter-spacing: 3.5px;
+    color: #fff;
+
+    @include mobile {
+      margin-top: 3rem;
+    }
+  }
+
+  &__layover {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 23.7rem;
+    height: 100%;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__vertical-big {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: .2rem;
+    background: #e6e6ec;
+  }
+
+  &__vertical-small {
+    position: absolute;
+    left: 9.3rem;
+    bottom: 0;
+    height: 14.4rem;
+    width: .2rem;
+    background: #e6e6ec;
+  }
+
+  &__horiz-big {
+    position: absolute;
+    left: 0;
+    bottom: 14.3rem;
+    height: .2rem;
+    width: 100%;
+    background: #e6e6ec;
+  }
+
+  &__horiz-small {
+    position: absolute;
+    left: 0;
+    bottom: 9.5rem;
+    height: .2rem;
+    width: 9.3rem;
+    background: #e6e6ec;
+  }
+
+  &__square {
+    position: absolute;
+    left: 4.7rem;
+    bottom: 9.7rem;
+    width: 4.6rem;
+    height: 4.6rem;
+    background: #fdc42c;
+  }
+
+  &__logo {
+    position: absolute;
+    right: 5.1rem;
+    top: 4.3rem;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: .2rem;
+      top: .8rem;
+      width: 1.9rem;
+      height: 1.9rem;
+      background: #fdc42c;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.card-catalog {
+  position: relative;
+  max-width: 30rem;
+  height: 100%;
+  padding: 6.8rem 2rem 2.7rem;
+  text-align: center;
+  background: $cardCatalog;
+  color: $cardText;
+
+  @include mobile {
+    padding: 4rem 1.2rem 2rem;
+    margin: auto;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.9rem;
+    max-width: 100%;
+    padding: .6rem 2.4rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .072rem;
+    color: $white;
+    background: $yellow;
+    border-radius: .4rem;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 13.4rem;
+    margin-bottom: 1.6rem;
+
+    @include mobile {
+      height: 8rem;
+      margin-top: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: .5rem;
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+    letter-spacing: .034rem;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__text {
+    letter-spacing: .034rem;
+
+    @include mobile {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+  }
+}

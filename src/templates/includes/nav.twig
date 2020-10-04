@@ -1,0 +1,47 @@
+{% if navList %}
+{% else %}
+{% set navList = [
+  {
+    link: 'Главная',
+    ref: '',
+    ancor: true,
+  },
+  {
+    link: 'Каталог',
+    ref: 'catalog',
+    ancor: true,
+  },
+  {
+    link: 'Преимущества',
+    ref: '',
+    ancor: true,
+  },
+  {
+    link: 'О нас',
+    ref: '',
+    ancor: true,
+  },
+  {
+    link: 'FAQ',
+    ref: '',
+    ancor: true,
+  },
+  {
+    link: 'Контакты',
+    ref: 'contacts',
+    ancor: true,
+  },
+  ] %}
+{% endif %}
+
+<nav class="nav {{navMod}}">
+  <ul class="nav__list">
+    {% for item in navList %}
+      <li class="nav__item">
+        <a href="{% if item.ancor %}{{item.ref}}{% else %}../../{{item.ref}}{% endif %}" class="nav__link{% if item.ancor %} js-ancor-link{% endif %}">
+          {{item.link}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

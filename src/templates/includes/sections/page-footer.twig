@@ -1,0 +1,32 @@
+{% if footerList %}
+{% else %}
+{% set footerList = [
+  {
+    text: 'Политика конфиденциальности',
+  },
+  {
+    text: 'Пользовательское соглашение',
+  },
+  {
+    text: 'Договор офёрты',
+  },
+  ] %}
+{% endif %}
+
+<footer class="page-footer" id="page-footer">
+  <div class="container page-footer__container">
+    <div class="page-footer__text page-footer__copypast">
+      Дюрер (с) 2020-2021  Крепёж для фасадных систем 
+    </div>
+    <ul class="page-footer__list">
+      {% for item in footerList %}
+        <li class="page-footer__item">
+          <div class="page-footer__text page-footer__link">
+            {{item.text}}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>
+

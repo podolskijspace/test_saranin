@@ -1,0 +1,41 @@
+<div class="card-contacts {% if btn %} card-contacts--btn{% endif %}">
+  <div class="card-contacts__content">
+    <ul class="card-contacts__list">
+      {% for item in list %}
+      <li class="card-contacts__item">
+        <div class="card-contacts__title">
+          {{item.title}}
+        </div>
+        <ul class="card-contacts__info-list">
+          {% for item in item.list %}
+            <li class="card-contacts__info-item">
+              <div class="card-contacts__icon-wrap">
+                <img src="./assets/img/content/{{item.icon}}" alt="icon" class="card-contacts__icon">
+              </div>
+              <div class="card-contacts__info-text">
+                {{item.text}}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if btn %}
+      {% include "./btn.twig" with {
+        btnText: 'Написать нам',
+        btnMod: 'card-contacts__btn',
+      } %}
+    {% endif %}
+  </div>
+  <div class="card-contacts__layover">
+    <div class="card-contacts__vertical-big"></div>
+    <div class="card-contacts__vertical-small"></div>
+    <div class="card-contacts__horiz-big"></div>
+    <div class="card-contacts__horiz-small"></div>
+    <div class="card-contacts__square"></div>
+    <div class="card-contacts__logo">
+      <img src="./assets/img/content/logo.png" alt="logo">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<header class="page-header" id="header">
+  <div class="page-header__top">
+    <div class="container page-header__container">
+      <a href="tel:88007750530" class="page-header__phone">
+        8 800 775 05 30
+      </a>
+      <a href="./" class="page-header__logo">
+        <img src="./assets/img/content/logo-white.png" alt="logo" class="page-header__logo-img">
+      </a>
+      {% include "../btn.twig" with {
+        btnText: 'Оставить заявку',
+        btnMod: 'page-header__btn'
+      } %}
+      <div class="page-header__menu-btn js-menu-btn">
+        <div class="page-header__menu-line"></div>
+        <div class="page-header__menu-line"></div>
+        <div class="page-header__menu-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-header__bottom">
+    <div class="container page-headder__container page-headder__container--bottom">
+      {% include "../nav.twig" %}
+    </div>
+  </div>
+</header>

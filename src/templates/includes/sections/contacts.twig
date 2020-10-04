@@ -1,0 +1,74 @@
+{% if contactsList %}
+{% else %}
+{% set contactsList = [
+  {
+    list: [
+      {
+        title: 'Москва',
+        list: [
+          {
+            text: 'Плющиха, 62/1',
+            icon: 'map.svg'
+          }
+        ]
+      },
+      {
+        title: 'Екатеринбург',
+        list: [
+          {
+            text: 'Ленина, 8',
+            icon: 'map.svg'
+          }
+        ]
+      },
+      {
+        title: 'Склад',
+        list: [
+          {
+            text: 'Екатеринбург, Проезжая 9 АУ <br>
+            заезд с Краснодарской',
+            icon: 'map.svg'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    btn: true,
+    list: [
+      {
+        title: 'Остались вопросы?',
+        list: [
+          {
+            text: '8 800 775 05 30',
+            icon: 'phone.svg'
+          },
+          {
+            text: 'info@duerer.ru',
+            icon: 'mail.svg'
+          },
+        ]
+      },
+    ]
+  },
+  ] %}
+{% endif %}
+
+<div class="contacts" id="contacts">
+  <div class="container contacts__container">
+    {% include "../title.twig" with {
+      title: 'Контакты',
+      titleSection: 'contacts',
+    } %}
+    <ul class="contacts__list">
+      {% for item in contactsList %}
+        <li class="contacts__item">
+          {% include "../card-contacts.twig" with {
+            btn: item.btn,
+            list: item.list
+          } %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

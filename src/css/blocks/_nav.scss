@@ -1,0 +1,42 @@
+.nav {
+  $self: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__list {
+    display: flex;
+    margin: 0 -4.1rem;
+
+    #{$self}--vertical & {
+      margin: -.6rem 0;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 0 4.1rem;
+
+    #{$self}--vertical & {
+      position: relative;
+      padding: .6rem 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    line-height: 100%;
+    font-weight: 400;
+    letter-spacing: 0.117rem;
+    color: $nav;
+
+    @include mobile {
+      font-size: 1.2rem;
+      color: $white;
+    }
+  }
+}

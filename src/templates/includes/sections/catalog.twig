@@ -1,0 +1,195 @@
+{% if btnList %}
+{% else %}
+{% set btnList = [
+  {
+    text: 'Фасадный крепеж',
+    num: '0',
+    active: true,
+    mod: 'facade'
+  },
+  {
+    text: 'Кронштейны',
+    num: '1',
+    mod: 'bracket'
+  },
+  {
+    text: 'Крепёж по чертежам',
+    num: '2',
+    mod: 'drawing'
+  },
+  ] %}
+{% endif %}
+
+{% if tabList %}
+{% else %}
+{% set tabList = [
+  {
+    num: '0',
+    active: true,
+    list: [
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+    ]
+  },
+  {
+    num: '1',
+    list: [
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+        
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+    ]
+  },
+  {
+    num: '2',
+    list: [
+      {
+
+      },
+      {
+        
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+      {
+
+      },
+      {
+        title: 'Шуруп по дереву,
+        полусфера',
+        text: 'форма H'
+      },
+      {
+
+      },
+    ]
+  },
+  ] %}
+{% endif %}
+
+<div class="catalog" id="catalog">
+  <div class="container catalog__container">
+    {% include "../title.twig" with {
+      title: 'Каталог товаров',
+      titleSection: 'catalog',
+    } %}
+    <ul class="catalog__btns-list">
+      {% for item in btnList %}
+        <li class="catalog__btns-item {% if item.active %}active{% endif %}" data-tabclass = "js-catalog-tabs" data-tabnumber = "{{item.num}}">
+          <div class="catalog__btns-btn{% if item.mod %} catalog__btns-btn--{{item.mod}}{% endif %}">
+            {{item.text}}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="catalog__tabs js-catalog-tabs">
+      {% for item in tabList %}
+        <li class="catalog__tab {% if item.active %}active{% endif %}" data-tabnumber = "{{item.num}}">
+          <ul class="catalog__card-list">
+            {% for item in item.list %}
+              <li class="catalog__card-item">
+                {% include "../card-catalog.twig" with {
+                  label: item.label,
+                  img: item.img,
+                  alt: item.alt,
+                  title: item.title,
+                  text: item.text,
+                } %}
+              </li>
+              {% endfor %}
+            </ul>
+            <div class="catalog__show js-show">
+              Показать все
+            </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% include "../btn.twig" with {
+      btnText: 'Скачать «СПРАВОЧНИК КОНСТРУКТОРА»',
+      btnMod: 'catalog__btn',
+    } %}
+  </div>
+</div>
